@@ -1,10 +1,10 @@
 import express from "express";
+import cors from "cors";
+import mongoose from "mongoose";
+import recipe from "./models/recipe.js";
 import morgan from "morgan";
 import helmet from "helmet";
 import dotenv from "dotenv";
-import cors from "cors";
-import mongoose from "mongoose";
-
 import recipeRouter from "./routes/recipe.js"
 
 dotenv.config();
@@ -24,7 +24,7 @@ app.set("views", "./views");
 app.set("view engine", "pug");
 
 // Middlewares
-// app.use("/recipe", require("./routes/recipe.js"))
+//app.use("/recipe", require("./routes/recipe.js"))*** already have a recipe router on line 28
 app.use("/recipe", recipeRouter)
 app.use(express.static("./public"));
 app.use(express.json());
