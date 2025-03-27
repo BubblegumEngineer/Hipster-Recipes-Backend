@@ -1,6 +1,6 @@
 // const Recipes=require("../models/recipe")
  import Recipes from "../models/recipe.js"
-
+console.log(Recipes)
 // GET ALL RECIPES
 export const getRecipes=async(req, res) => {
     const recipes=await Recipes.find()

@@ -7,14 +7,12 @@ const recipeSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    ingredients: {
-      type: String,
-      required: true,
-    },
-    instructions: {
-      type: String,
-      required: true,
-    },
+    ingredients: [
+      String
+    ],
+    instructions: [
+      String
+    ],
     time: {
       type: String,
     
@@ -26,5 +24,5 @@ const recipeSchema = mongoose.Schema(
 
   },{ timestamps: true });
 
-   export default mongoose.model("Recipes", recipeSchema)
+   export default mongoose.model("recipe", recipeSchema)
 // module.exports=mongoose.model("Recipes", recipeSchema)
